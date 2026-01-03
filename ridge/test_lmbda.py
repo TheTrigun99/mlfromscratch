@@ -14,8 +14,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.25, random_state=42
 )
 
-model = ridge(X_train)
-
+model=ridge(X_train)
 # Recherche de alpha/lambda (en python lambda correspond à une fonction)
 mx = 1000      # alpha max
 n = 200        # nombre de points testés
@@ -36,7 +35,7 @@ print("RSS OSL  :", np.sum(resid**2))
 print("Best alpha :", best_alpha)
 print("Ridge RSS   :", best_rss)
 plt.plot(model.v,model.rm)
-plt.title("RSS en fonction de lambda ")
-plt.xlabel("lambda ")
+plt.title("RSS en fonction de alpha ")
+plt.xlabel("alpha")
 plt.ylabel("RSS (erreur)")
 plt.show()
